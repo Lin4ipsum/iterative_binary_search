@@ -7,7 +7,7 @@ class Search
 
     return nil if value < min_value || value > max_value
 
-    while value != array[mid_index] and array.include?(value)
+    while array.include?(value)value && != array[mid_index]
       if value < array[mid_index]
         mid_index -= 1
       end
