@@ -1,7 +1,21 @@
 require 'rspec'
 require_relative 'binary_search'
 
-describe Search do 
+describe Search do
+  context "binary_decorator" do
+    it "should truncate array and call binary_search when value in array" do
+      array = [4,11,26,33,49,73]
+      value = 26
+      expect(Search.binary_decorator(array, 4, 33, value)).to eq(26)
+    end
+
+    it "should truncate array and call binary_search when value in array" do
+      array = [4,11,26,33,49,73]
+      value = 27
+      expect(Search.binary_decorator(array, 4, 33, value)).to eq(nil)
+    end
+  end
+
   context "binary_search with integer array" do 
     it "returns a value if a value less than mid_index" do
       array = [4,11,26,33,49,73]

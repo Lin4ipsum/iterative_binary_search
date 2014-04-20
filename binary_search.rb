@@ -1,5 +1,12 @@
 class Search
 
+  def self.binary_decorator(array, left, right, value)
+    left_index = self.get_index(array, left)
+    right_index = self.get_index(array, right)
+    truncated_array = array[left_index..right_index]
+    self.binary_search(truncated_array, value)
+  end
+
   def self.binary_search(array, value)
     max_value = array.last
     min_value = array.first
@@ -21,5 +28,11 @@ class Search
     else
       nil
     end
+  end
+
+  private
+  
+  def self.get_index(array, integer)
+    array.index integer
   end
 end
